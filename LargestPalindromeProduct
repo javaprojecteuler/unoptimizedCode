@@ -1,0 +1,40 @@
+package projectEuler;
+
+public class LargestPalindromeProduct {
+	public static void main(String[] args) {
+		int number = 999999;
+
+		while (!checkPalindrome(number)) {
+			number--;
+			if (!checkPrimeFactor(number))
+				continue;
+		}
+		System.out.println(number);
+	}
+
+	private static boolean checkPrimeFactor(int number) {
+		int divident = 999;
+		while (divident != 99) {
+			if ((number % divident) == 0) {
+				break;
+			}
+			divident--;
+		}
+
+		return true;
+	}
+
+	private static boolean checkPalindrome(int number) {
+		int newNumber = 0;
+		int tempNumber = number;
+		while (number != 0) {
+			newNumber = ((newNumber * 10) + (number % 10));
+			number = number / 10;
+		}
+		if (newNumber == tempNumber)
+			return true;
+
+		return false;
+	}
+
+}
