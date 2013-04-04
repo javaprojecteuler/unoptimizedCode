@@ -1,0 +1,32 @@
+//Find out the sum of Fibonacci numbers, where sum would be less then, 4 million where the Fibonacci numbers must be even
+//Like: 1 2 3 5 8 13 so till here sum will be 2 + 8 = 10 
+package projectEuler;
+
+public class SumOfFibonacci {
+
+  public static void main(String[] args) {
+  	int pre =1 , next = 1 ;
+  	int sum = 0;
+  	int number = 0 ;
+  	while(sum<4000000)
+  	{	
+  		number++;
+  		int nextFibNum = 0;
+  		nextFibNum = fib(number);
+  		if(nextFibNum % 2 == 0)
+  		sum = sum + nextFibNum ; 
+  	}
+  	
+  	System.out.println(sum);
+  }
+
+  private static int fib(int number) {
+  	if(number == 0)
+  		return 0;
+  	if(number == 1)
+  		return 1;
+  	
+  	return fib(number-2) + fib(number-1);
+  }
+
+}
