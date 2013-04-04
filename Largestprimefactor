@@ -1,0 +1,26 @@
+//Largest Prime Factor: like 30 hai prime factors 2 3 5 so largest prime factor is 5.
+package projectEuler;
+
+import java.math.BigInteger;
+
+public class Largestprimefactor {
+  public static void main(String[] args) {
+  	int divisible = 0;
+  	BigInteger divident = new BigInteger("1");
+  	BigInteger number = new BigInteger("600851475143");
+  	while (!number.toString().equals("1")) {
+  		divident = divident.add(divident.ONE);
+  		number = primefactor(number, divident);
+  	}
+
+  	System.out.println(divident);
+  }
+
+  private static BigInteger primefactor(BigInteger number, BigInteger divident) {
+
+  	if ((number.remainder(divident).toString().equals("0")))
+  		return number.divide(divident);
+
+  	return number;
+  }
+}
