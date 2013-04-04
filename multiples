@@ -1,0 +1,17 @@
+//Find out the sum of multiples of 3 & 5 those are the below to 1000
+package projectEuler;
+
+public class multiples {
+  public static void main(String[] args) {
+  	int  sum = 0;
+  	for (int i = 1; i < 1000; i++) {
+  		int multiple =0;
+  		if ((i % 3 == 0) || (i % 5 == 0)) {
+  			multiple = i;
+  		}
+  		 
+  		sum = sum + multiple;
+  	}
+  	System.out.println(sum);
+  }
+}
